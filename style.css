@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: #dbdbc5
+}
+
+.todo {
+    height: 100vh;
+    background-color: white;
+    margin: 150px;
+    border-radius: 50px;
+    height: 600px;
+    border: 3px solid black;
+    padding: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #75756a;
+}
+
+h4 {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: #75756a;
+    padding: 10px;
+    font-size: 22px;
+}
+
+li {
+    cursor: pointer;
+    height: 30px;
+    padding: 10px 0 0 0;
+}
+
+ul {
+    /* Get rid of those bullet points */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+input {
+    box-sizing: border-box;
+    font-size: 2rem;
+    border-radius: 25px;
+    width: 100%;
+    padding: 15px 15px 15px 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder{
+    color: #dedec8;
+}
+
+.fa-edit{
+    display: none;
+    padding-left: 10px;
+}
