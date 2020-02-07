@@ -23,17 +23,17 @@ function addNewTodo (name) {
 }
 
 
- function removeNewTodo () {
+ function removeNewTodo (index) {
     ul.addEventListener('click', e => {
-       let clickedListItem = e.target.name;
-        console.log(clickedListItem)
+       let clickedListItem = e.target.tagName;
 
        if(clickedListItem === 'LI'){
             e.target.classList.toggle('completed');
         } else if (clickedListItem === 'SPAN') {
             e.target.parentElement.remove();
-           todoArray.splice(index, 1);
+            todoArray.splice(index, 1);
         }
+        saveTodos();
      });
 }
 
@@ -66,6 +66,26 @@ function readTodo () {
     });
 }
 
+// Loop over out array again to keep todos
+function readNewTodos () {
+    for (let todo of todoArray) {
+        let todoElement = document.createElement("li");
+        todoElement.innerText = todo.name;
+        todoElement.className = 'items';
+    
+
+        const newSpan = document.createElement('span');
+        newSpan.innerText = "\xa0";
+        newSpan.className = "fas fa-minus-circle";
+    
+
+        todoElement.prepend(newSpan);
+        
+        // prepending the li to the ul to show the stored todo on the page
+        ul.prepend(todoElement);
+    }
+}
+
 function saveTodos () {
     let savedTasks = JSON.stringify(todoArray);
     localStorage.setItem('todos', savedTasks);
@@ -83,3 +103,4 @@ function getTodos () {
 readTodo();
 getTodos();
 removeNewTodo();
+readNewTodos();
