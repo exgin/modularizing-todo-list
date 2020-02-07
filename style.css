@@ -72,3 +72,7 @@ input::placeholder{
     display: none;
     padding-left: 10px;
 }
+
+sup {
+    font-size: px;
+}

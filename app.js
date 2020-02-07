@@ -26,9 +26,17 @@ function addNewTodo (name) {
  function removeNewTodo (index) {
     ul.addEventListener('click', e => {
        let clickedListItem = e.target.tagName;
-
+       
        if(clickedListItem === 'LI'){
             e.target.classList.toggle('completed');
+            for (let todo of todoArray){
+                if (todo.completed) {
+                    todo.completed = true;
+                } else {
+                    todo.completed = false;
+                }
+            } 
+
         } else if (clickedListItem === 'SPAN') {
             e.target.parentElement.remove();
             todoArray.splice(index, 1);
